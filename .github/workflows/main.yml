@@ -7,7 +7,7 @@ on:
 jobs:
   build_exe:
     name: 生成 exe 可执行文件
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     steps:
   
     - uses: actions/checkout@v4
@@ -24,7 +24,7 @@ jobs:
         targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
     - name: 安装 Ubuntu 特需依赖
-      if: matrix.platform == 'ubuntu-22.04' # This must match the platform value defined above.
+      if: matrix.platform == 'ubuntu-20.04' # This must match the platform value defined above.
       run: |
         sudo apt-get update
         sudo apt-get install -y libwebkit2gtk-4.0-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf libgtk-3-dev
