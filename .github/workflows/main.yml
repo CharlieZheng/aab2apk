@@ -11,4 +11,5 @@ jobs:
     steps:
     - name: tauri-build
       run: npm run tauri build
+      working-directory: ./
     
