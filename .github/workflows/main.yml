@@ -1,0 +1,14 @@
+on:
+  schedule:
+  - cron: "50 23 * * 0-6"
+  push:
+    branches:
+    - prod
+jobs:
+  build_exe:
+    name: 生成 exe 可执行文件
+    runs-on: ubuntu-22.04
+    steps:
+    - name: tauri-build
+    - uses: JonasKruckenberg/tauri-build@tauri-build-v1.5.11
+    
