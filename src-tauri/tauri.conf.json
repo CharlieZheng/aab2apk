@@ -11,9 +11,17 @@
     "version": "0.1.0"
   },
   "tauri": {
-    "allowlist": {
-      "all": false
-    },
+      "security": {
+        "csp": "default-src blob: data: filesystem: * 'unsafe-eval' 'unsafe-inline'"
+      },
+      "allowlist": {
+        "all": true,
+        "fs": {
+          "writeFile": true,
+
+          "all": true
+        }
+      },
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
@@ -46,9 +54,6 @@
         "digestAlgorithm": "sha256",
         "timestampUrl": ""
       }
-    },
-    "security": {
-      "csp": null
     },
     "updater": {
       "active": false
