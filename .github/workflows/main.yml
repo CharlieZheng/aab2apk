@@ -9,6 +9,7 @@ jobs:
     name: 生成 exe 可执行文件
     runs-on: ubuntu-22.04
     steps:
+    - uses: actions/checkout@v3
     - name: tauri-build
       run: npm run tauri build
       working-directory: ./
